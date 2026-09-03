@@ -142,7 +142,12 @@ class ESPNSourceAdapter(SourceAdapter):
             try:
                 observations.append(parse_weekly_actual(entry, season_id, week_number))
             except ESPNSchemaError:
-                pass  # no actual result yet for this period — fine, not an error for ACTUAL specifically
+                pass  # no actual result yet for this period (zero matching stats[] entries) —
+                # expected absence, fine, not an error for ACTUAL specifically. NOTE: this only
+                # catches ESPNSchemaError. A duplicate/anomalous actual entry raises
+                # ESPNDataAnomalyError instead (see espn_core.py), which is deliberately NOT
+                # caught here and will propagate and fail the whole fetch() — an anomaly must
+                # never be silently treated the same as "not played yet."
             if include_rankings:
                 try:
                     observations.append(parse_overall_ranking(entry, season_id, ranking_week))

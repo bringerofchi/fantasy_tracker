@@ -72,6 +72,33 @@ class ESPNSchemaError(RuntimeError):
     project's requirement is to fail loudly rather than silently
     substitute a default, a season total for a weekly figure, or a
     current ranking for a historical one.
+
+    Also covers EXPECTED ABSENCE — e.g. no weekly stats[] entry yet
+    because the period hasn't happened or hasn't been played. Callers
+    that treat "not available yet" as a normal, swallowable condition
+    (see ESPNSourceAdapter.fetch()'s ACTUAL handling) catch this type
+    specifically. Contrast with ESPNDataAnomalyError below, which is
+    deliberately NOT a subclass of this, so those same callers don't
+    also swallow a genuine data-integrity problem.
+    """
+
+
+class ESPNDataAnomalyError(RuntimeError):
+    """
+    Raised when the source returns data that isn't merely absent but
+    actively contradicts the expected shape — e.g. more than one
+    matching weekly stats[] entry for a single (season, week,
+    statSourceId), which should never happen and is not the same
+    condition as "hasn't happened yet."
+
+    Deliberately NOT a subclass of ESPNSchemaError (backend v1 review,
+    2026-09): code that does `except ESPNSchemaError: pass` around an
+    expected-absence case (a future/unplayed week) must NOT also
+    silently swallow this — an anomaly is never expected and must
+    propagate and fail the fetch loudly, per this project's fail-loudly
+    principle. Before this fix, both conditions raised ESPNSchemaError
+    and were indistinguishable to callers; a duplicate actual-stat entry
+    would have looked exactly like an unplayed bye week.
     """
 
 
@@ -131,8 +158,14 @@ def find_weekly_stat_entry(
     Return the single stats[] entry matching
     (seasonId, scoringPeriodId=week_number, statSourceId, statSplitTypeId=WEEKLY).
 
-    Raises ESPNSchemaError if there isn't EXACTLY one match — ambiguity
-    or absence is a hard error here, never silently coerced to 0.
+    Raises if there isn't EXACTLY one match — absence and ambiguity are
+    both hard errors, never silently coerced to 0, but they are
+    DIFFERENT errors on purpose (backend v1 review, 2026-09):
+      - zero matches  -> ESPNSchemaError    (expected absence: e.g. the
+        period hasn't been played yet; callers may treat this as
+        swallowable)
+      - >1 matches    -> ESPNDataAnomalyError (a genuine integrity
+        problem — must never be treated the same as "not played yet")
     """
     if week_number <= 0:
         raise ValueError("week_number must be a positive NFL week (1-18); use season-total helpers for week 0")
@@ -154,10 +187,11 @@ def find_weekly_stat_entry(
             "do not substitute 0 or a season total"
         )
     if len(matches) > 1:
-        raise ESPNSchemaError(
-            f"expected exactly one weekly stats[] entry for {player.get('fullName')!r} "
-            f"season={season_id} week={week_number} statSourceId={stat_source_id}, "
-            f"found {len(matches)}: {matches}"
+        raise ESPNDataAnomalyError(
+            f"found {len(matches)} weekly stats[] entries for {player.get('fullName')!r} "
+            f"season={season_id} week={week_number} statSourceId={stat_source_id}, expected "
+            f"exactly one — this is a data-integrity anomaly, not an expected absence, and must "
+            f"not be silently treated as 'not played yet': {matches}"
         )
     return matches[0]
 

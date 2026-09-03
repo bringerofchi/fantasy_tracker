@@ -70,7 +70,10 @@ class LocalFileSourceAdapter(SourceAdapter):
                 # Actual results legitimately don't exist yet for a
                 # future/current week — that's fine, projections still
                 # got added above. We only swallow this for ACTUAL,
-                # never for PROJECTION.
+                # never for PROJECTION. A duplicate/anomalous actual
+                # entry raises ESPNDataAnomalyError instead (not a
+                # subclass of ESPNSchemaError — see espn_core.py) and is
+                # deliberately NOT caught here, so it propagates.
                 pass
             if self.include_rankings:
                 observations.append(parse_overall_ranking(entry, season_id, self.ranking_week))

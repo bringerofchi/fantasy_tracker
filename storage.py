@@ -9,7 +9,8 @@ Design choices, and why:
   require a schema change here.
 
 - A single UNIQUE constraint defines what "the same fact" means:
-  (source, season_id, week_number, data_type, ranking_type, source_player_id).
+  (source, season_id, week_number, data_type, ranking_type,
+  source_player_id, scoring_format).
   Re-ingesting the same fact UPSERTs (updates fantasy_points/rank/
   retrieved_at/raw) instead of inserting a duplicate row — this is what
   makes "duplicate imports handled correctly" (QC5b in the ESPN adapter's
@@ -21,10 +22,21 @@ Design choices, and why:
   two separate rows rather than one clobbering the other — this is what
   makes cross-source attribution (QC6b) testable too.
 
-- ranking_type is nullable in the data model (None for PROJECTION/ACTUAL)
-  but SQLite treats every NULL as distinct for uniqueness purposes, which
-  would silently break the intended uniqueness for exactly the rows where
-  it's None. Stored as '' instead of NULL to avoid that trap.
+- `scoring_format` is part of the uniqueness key (backend v1 review,
+  2026-09) even though every observation produced today is hardcoded to
+  "PPR". The tracker is explicitly meant to support multiple fantasy
+  scoring formats eventually; leaving the field unprotected by the
+  uniqueness constraint would let a future Standard/Half-PPR import for
+  the same player/week silently overwrite a PPR row instead of coexisting
+  with it. Fixing this now, while it's a no-op change in practice, is
+  cheaper than fixing it after real Standard/Half-PPR data exists.
+
+- ranking_type and scoring_format are both nullable in the data model
+  (ranking_type: None for PROJECTION/ACTUAL; scoring_format: no default
+  is enforced by the dataclass) but SQLite treats every NULL as distinct
+  for uniqueness purposes, which would silently break the intended
+  uniqueness for exactly the rows where either is None. Both are stored
+  as '' instead of NULL to avoid that trap.
 """
 
 from __future__ import annotations
@@ -54,17 +66,17 @@ CREATE TABLE IF NOT EXISTS observations (
     data_type           TEXT NOT NULL,
     ranking_type        TEXT NOT NULL DEFAULT '',   -- '' stands in for "not a ranking"; see module docstring
     source_player_id    TEXT NOT NULL,
+    scoring_format      TEXT NOT NULL DEFAULT '',   -- '' stands in for "not set"; see module docstring
     player_full_name    TEXT NOT NULL,
     player_position     TEXT NOT NULL,
     player_pro_team_id  INTEGER,
     player_pro_team_abbrev TEXT,
     fantasy_points      REAL,
-    scoring_format      TEXT,
     rank                REAL,
     retrieved_at        TEXT NOT NULL,
     source_record_id    TEXT,
     raw_json            TEXT,
-    UNIQUE (source, season_id, week_number, data_type, ranking_type, source_player_id)
+    UNIQUE (source, season_id, week_number, data_type, ranking_type, source_player_id, scoring_format)
 );
 
 CREATE INDEX IF NOT EXISTS idx_observations_lookup
@@ -73,23 +85,26 @@ CREATE INDEX IF NOT EXISTS idx_observations_lookup
 
 UPSERT_SQL = """
 INSERT INTO observations (
-    source, season_id, week_number, data_type, ranking_type, source_player_id,
+    source, season_id, week_number, data_type, ranking_type, source_player_id, scoring_format,
     player_full_name, player_position, player_pro_team_id, player_pro_team_abbrev,
-    fantasy_points, scoring_format, rank, retrieved_at, source_record_id, raw_json
+    fantasy_points, rank, retrieved_at, source_record_id, raw_json
 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-ON CONFLICT (source, season_id, week_number, data_type, ranking_type, source_player_id)
+ON CONFLICT (source, season_id, week_number, data_type, ranking_type, source_player_id, scoring_format)
 DO UPDATE SET
     player_full_name = excluded.player_full_name,
     player_position = excluded.player_position,
     player_pro_team_id = excluded.player_pro_team_id,
     player_pro_team_abbrev = excluded.player_pro_team_abbrev,
     fantasy_points = excluded.fantasy_points,
-    scoring_format = excluded.scoring_format,
     rank = excluded.rank,
     retrieved_at = excluded.retrieved_at,
     source_record_id = excluded.source_record_id,
     raw_json = excluded.raw_json
 """
+# Note: scoring_format is NOT in the DO UPDATE SET list, same as
+# ranking_type — both are now part of row identity (the ON CONFLICT
+# target), not mutable attributes of an existing row. A row's identity
+# fields are only ever set once, at insert time.
 
 
 def connect(path: str | Path) -> sqlite3.Connection:
@@ -118,6 +133,7 @@ def _row_key(o: NormalizedObservation) -> tuple:
         o.data_type.value,
         o.ranking_type.value if o.ranking_type else "",
         o.player.source_player_id,
+        o.scoring_format or "",
     )
 
 
@@ -156,7 +172,7 @@ def save_observations(conn: sqlite3.Connection, observations: list[NormalizedObs
     for o in observations:
         cur = conn.execute(
             "SELECT id FROM observations WHERE source=? AND season_id=? AND week_number=? "
-            "AND data_type=? AND ranking_type=? AND source_player_id=?",
+            "AND data_type=? AND ranking_type=? AND source_player_id=? AND scoring_format=?",
             _row_key(o),
         )
         existed = cur.fetchone() is not None
@@ -169,12 +185,12 @@ def save_observations(conn: sqlite3.Connection, observations: list[NormalizedObs
                 o.data_type.value,
                 o.ranking_type.value if o.ranking_type else "",
                 o.player.source_player_id,
+                o.scoring_format or "",
                 o.player.full_name,
                 o.player.position.value,
                 o.player.pro_team_id,
                 o.player.pro_team_abbrev,
                 o.fantasy_points,
-                o.scoring_format,
                 o.rank,
                 o.retrieved_at.isoformat(),
                 o.source_record_id,
@@ -213,7 +229,7 @@ def _row_to_observation(row: sqlite3.Row) -> NormalizedObservation:
             pro_team_abbrev=row["player_pro_team_abbrev"],
         ),
         fantasy_points=row["fantasy_points"],
-        scoring_format=row["scoring_format"],
+        scoring_format=row["scoring_format"] or None,
         ranking_type=_RANKINGTYPE_BY_VALUE.get(row["ranking_type"]) if row["ranking_type"] else None,
         rank=row["rank"],
         retrieved_at=datetime.fromisoformat(row["retrieved_at"]),
