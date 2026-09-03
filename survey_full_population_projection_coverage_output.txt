@@ -1,0 +1,520 @@
+(writing a full copy of this output to C:\Projects\fantasy_tracker\survey_full_population_projection_coverage_output.txt)
+
+======================================================================
+PROJECTION COVERAGE SURVEY: season=2025 week=5, full population
+======================================================================
+
+Population size: 1090
+
+Coverage by position:
+  QB    : 74/131 have a valid weekly projection
+  RB    : 151/266 have a valid weekly projection
+  WR    : 236/389 have a valid weekly projection
+  TE    : 125/208 have a valid weekly projection
+  K     : 43/63 have a valid weekly projection
+  id=9  : 0/1 have a valid weekly projection
+  D/ST  : 28/32 have a valid weekly projection
+
+Total failures: 433 / 1090
+
+First 20 failures:
+  [ESPNSchemaError] 'Steelers D/ST' (D/ST): no weekly stats[] entry for 'Steelers D/ST' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+  [ESPNSchemaError] 'Packers D/ST' (D/ST): no weekly stats[] entry for 'Packers D/ST' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+  [ESPNSchemaError] 'Bears D/ST' (D/ST): no weekly stats[] entry for 'Bears D/ST' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+  [ESPNSchemaError] 'Falcons D/ST' (D/ST): no weekly stats[] entry for 'Falcons D/ST' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+  [ESPNSchemaError] 'Scott Matlock' (id=9): unrecognized defaultPositionId=9 for player 'Scott Matlock' (id=4373684); refusing to guess a position
+  [ESPNSchemaError] 'Russell Gage Jr.' (WR): no weekly stats[] entry for 'Russell Gage Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+  [ESPNSchemaError] 'Trent Taylor' (WR): no weekly stats[] entry for 'Trent Taylor' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+  [ESPNSchemaError] 'Juwann Winfree' (WR): no weekly stats[] entry for 'Juwann Winfree' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+  [ESPNSchemaError] 'Irv Smith Jr.' (TE): no weekly stats[] entry for 'Irv Smith Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+  [ESPNSchemaError] 'Deshaun Watson' (QB): no weekly stats[] entry for 'Deshaun Watson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+  [ESPNSchemaError] 'Josh Johnson' (QB): no weekly stats[] entry for 'Josh Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+  [ESPNSchemaError] 'Tyree Jackson' (TE): no weekly stats[] entry for 'Tyree Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+  [ESPNSchemaError] 'Andrew Beck' (RB): no weekly stats[] entry for 'Andrew Beck' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+  [ESPNSchemaError] 'Salvon Ahmed' (RB): no weekly stats[] entry for 'Salvon Ahmed' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+  [ESPNSchemaError] 'Reggie Gilliam' (RB): no weekly stats[] entry for 'Reggie Gilliam' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+  [ESPNSchemaError] 'Trishton Jackson' (WR): no weekly stats[] entry for 'Trishton Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+  [ESPNSchemaError] 'Kenny Yeboah' (TE): no weekly stats[] entry for 'Kenny Yeboah' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+  [ESPNSchemaError] 'D.J. Montgomery' (WR): no weekly stats[] entry for 'D.J. Montgomery' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+  [ESPNSchemaError] 'David Sills V' (WR): no weekly stats[] entry for 'David Sills V' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+  [ESPNSchemaError] 'Jelani Woods' (TE): no weekly stats[] entry for 'Jelani Woods' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+
+[IMPORTANT] 429 failures are NOT D/ST — this is not a D/ST-only issue.
+Non-D/ST failures (all of them):
+    [ESPNSchemaError] 'Scott Matlock' (id=9): unrecognized defaultPositionId=9 for player 'Scott Matlock' (id=4373684); refusing to guess a position
+    [ESPNSchemaError] 'Russell Gage Jr.' (WR): no weekly stats[] entry for 'Russell Gage Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Trent Taylor' (WR): no weekly stats[] entry for 'Trent Taylor' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Juwann Winfree' (WR): no weekly stats[] entry for 'Juwann Winfree' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Irv Smith Jr.' (TE): no weekly stats[] entry for 'Irv Smith Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Deshaun Watson' (QB): no weekly stats[] entry for 'Deshaun Watson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Josh Johnson' (QB): no weekly stats[] entry for 'Josh Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Tyree Jackson' (TE): no weekly stats[] entry for 'Tyree Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Andrew Beck' (RB): no weekly stats[] entry for 'Andrew Beck' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Salvon Ahmed' (RB): no weekly stats[] entry for 'Salvon Ahmed' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Reggie Gilliam' (RB): no weekly stats[] entry for 'Reggie Gilliam' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Trishton Jackson' (WR): no weekly stats[] entry for 'Trishton Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Kenny Yeboah' (TE): no weekly stats[] entry for 'Kenny Yeboah' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'D.J. Montgomery' (WR): no weekly stats[] entry for 'D.J. Montgomery' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'David Sills V' (WR): no weekly stats[] entry for 'David Sills V' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jelani Woods' (TE): no weekly stats[] entry for 'Jelani Woods' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Keaontay Ingram' (RB): no weekly stats[] entry for 'Keaontay Ingram' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Skylar Thompson' (QB): no weekly stats[] entry for 'Skylar Thompson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Stetson Bennett IV' (QB): no weekly stats[] entry for 'Stetson Bennett IV' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Tank Dell' (WR): no weekly stats[] entry for 'Tank Dell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Deneric Prince' (RB): no weekly stats[] entry for 'Deneric Prince' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Irvin Charles' (WR): no weekly stats[] entry for 'Irvin Charles' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Ben VanSumeren' (RB): no weekly stats[] entry for 'Ben VanSumeren' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Brady Russell' (RB): no weekly stats[] entry for 'Brady Russell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Tommy DeVito' (QB): no weekly stats[] entry for 'Tommy DeVito' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jonathon Brooks' (RB): no weekly stats[] entry for 'Jonathon Brooks' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Erick All Jr.' (TE): no weekly stats[] entry for 'Erick All Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Tanner McLachlan' (TE): no weekly stats[] entry for 'Tanner McLachlan' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Bryce Ford-Wheaton' (WR): no weekly stats[] entry for 'Bryce Ford-Wheaton' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'British Brooks' (RB): no weekly stats[] entry for 'British Brooks' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Colson Yankoff' (TE): no weekly stats[] entry for 'Colson Yankoff' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Quinn Ewers' (QB): no weekly stats[] entry for 'Quinn Ewers' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Phil Mafah' (RB): no weekly stats[] entry for 'Phil Mafah' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Graham Mertz' (QB): no weekly stats[] entry for 'Graham Mertz' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Thomas Fidone II' (TE): no weekly stats[] entry for 'Thomas Fidone II' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Kurtis Rourke' (QB): no weekly stats[] entry for 'Kurtis Rourke' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Kaden Prather' (WR): no weekly stats[] entry for 'Kaden Prather' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Dominic Lovett' (WR): no weekly stats[] entry for 'Dominic Lovett' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Riley Leonard' (QB): no weekly stats[] entry for 'Riley Leonard' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Will Howard' (QB): no weekly stats[] entry for 'Will Howard' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Lan Larison' (RB): no weekly stats[] entry for 'Lan Larison' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Logan Thomas' (TE): no weekly stats[] entry for 'Logan Thomas' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'AJ McCarron' (QB): no weekly stats[] entry for 'AJ McCarron' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Keith Smith' (RB): no weekly stats[] entry for 'Keith Smith' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Blaine Gabbert' (QB): no weekly stats[] entry for 'Blaine Gabbert' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Matthew Slater' (WR): no weekly stats[] entry for 'Matthew Slater' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Matt Barkley' (QB): no weekly stats[] entry for 'Matt Barkley' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Brian Hoyer' (QB): no weekly stats[] entry for 'Brian Hoyer' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Jason Cabinda' (RB): no weekly stats[] entry for 'Jason Cabinda' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Isaiah McKenzie' (WR): no weekly stats[] entry for 'Isaiah McKenzie' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Dwayne Washington' (RB): no weekly stats[] entry for 'Dwayne Washington' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Brandon Powell' (WR): no weekly stats[] entry for 'Brandon Powell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Richie James' (WR): no weekly stats[] entry for 'Richie James' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jordan Akins' (TE): no weekly stats[] entry for 'Jordan Akins' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Laquon Treadwell' (WR): no weekly stats[] entry for 'Laquon Treadwell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Nick Vannett' (TE): no weekly stats[] entry for 'Nick Vannett' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'River Cracraft' (WR): no weekly stats[] entry for 'River Cracraft' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Keith Kirkwood' (WR): no weekly stats[] entry for 'Keith Kirkwood' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Eric Tomlinson' (TE): no weekly stats[] entry for 'Eric Tomlinson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Anthony Firkser' (TE): no weekly stats[] entry for 'Anthony Firkser' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Alex Erickson' (WR): no weekly stats[] entry for 'Alex Erickson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Damiere Byrd' (WR): no weekly stats[] entry for 'Damiere Byrd' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Alex Armah' (RB): no weekly stats[] entry for 'Alex Armah' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Boston Scott' (RB): no weekly stats[] entry for 'Boston Scott' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jeff Driskel' (QB): no weekly stats[] entry for 'Jeff Driskel' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Nathan Peterman' (QB): no weekly stats[] entry for 'Nathan Peterman' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'MyCole Pruitt' (TE): no weekly stats[] entry for 'MyCole Pruitt' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Nick Bawden' (RB): no weekly stats[] entry for 'Nick Bawden' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Byron Pringle' (WR): no weekly stats[] entry for 'Byron Pringle' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Mike White' (QB): no weekly stats[] entry for 'Mike White' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Jonathan Williams' (RB): no weekly stats[] entry for 'Jonathan Williams' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'C.J. Beathard' (QB): no weekly stats[] entry for 'C.J. Beathard' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Darrell Daniels' (TE): no weekly stats[] entry for 'Darrell Daniels' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Stephen Anderson' (TE): no weekly stats[] entry for 'Stephen Anderson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Phillip Dorsett II' (WR): no weekly stats[] entry for 'Phillip Dorsett II' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Tyler Kroft' (TE): no weekly stats[] entry for 'Tyler Kroft' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'C.J. Uzomah' (TE): no weekly stats[] entry for 'C.J. Uzomah' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Blake Bell' (TE): no weekly stats[] entry for 'Blake Bell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Zach Gentry' (TE): no weekly stats[] entry for 'Zach Gentry' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Marcedes Lewis' (TE): no weekly stats[] entry for 'Marcedes Lewis' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Trevon Wesco' (TE): no weekly stats[] entry for 'Trevon Wesco' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Trayveon Williams' (RB): no weekly stats[] entry for 'Trayveon Williams' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Devine Ozigbo' (RB): no weekly stats[] entry for 'Devine Ozigbo' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Trevor Siemian' (QB): no weekly stats[] entry for 'Trevor Siemian' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Ryan Griffin' (QB): no weekly stats[] entry for 'Ryan Griffin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Ameer Abdullah' (RB): no weekly stats[] entry for 'Ameer Abdullah' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Brett Rypien' (QB): no weekly stats[] entry for 'Brett Rypien' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'John Kelly Jr.' (RB): no weekly stats[] entry for 'John Kelly Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Easton Stick' (QB): no weekly stats[] entry for 'Easton Stick' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jeff Wilson Jr.' (RB): no weekly stats[] entry for 'Jeff Wilson Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Logan Woodside' (QB): no weekly stats[] entry for 'Logan Woodside' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Tim Boyle' (QB): no weekly stats[] entry for 'Tim Boyle' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Brandon Bolden' (RB): no weekly stats[] entry for 'Brandon Bolden' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Jordan Matthews' (TE): no weekly stats[] entry for 'Jordan Matthews' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Mecole Hardman Jr.' (WR): no weekly stats[] entry for 'Mecole Hardman Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Equanimeous St. Brown' (WR): no weekly stats[] entry for 'Equanimeous St. Brown' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. 
+    [ESPNSchemaError] 'Austin Seibert' (K): no weekly stats[] entry for 'Austin Seibert' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Gerald Everett' (TE): no weekly stats[] entry for 'Gerald Everett' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Myles Gaskin' (RB): no weekly stats[] entry for 'Myles Gaskin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Hayden Hurst' (TE): no weekly stats[] entry for 'Hayden Hurst' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] "N'Keal Harry" (TE): no weekly stats[] entry for "N'Keal Harry" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Nyheim Hines' (RB): no weekly stats[] entry for 'Nyheim Hines' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Andy Isabella' (WR): no weekly stats[] entry for 'Andy Isabella' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Parris Campbell' (WR): no weekly stats[] entry for 'Parris Campbell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Miles Boykin' (WR): no weekly stats[] entry for 'Miles Boykin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Qadree Ollison' (RB): no weekly stats[] entry for 'Qadree Ollison' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Darrell Henderson Jr.' (RB): no weekly stats[] entry for 'Darrell Henderson Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. 
+    [ESPNSchemaError] 'Damien Harris' (RB): no weekly stats[] entry for 'Damien Harris' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] "Tre'Quan Smith" (WR): no weekly stats[] entry for "Tre'Quan Smith" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Dalvin Cook' (RB): no weekly stats[] entry for 'Dalvin Cook' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Rashaad Penny' (RB): no weekly stats[] entry for 'Rashaad Penny' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Chase Edmonds' (RB): no weekly stats[] entry for 'Chase Edmonds' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Leonard Fournette' (RB): no weekly stats[] entry for 'Leonard Fournette' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'John Ross' (WR): no weekly stats[] entry for 'John Ross' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'DJ Chark' (WR): no weekly stats[] entry for 'DJ Chark' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week) 
+    [ESPNSchemaError] 'Mike Boone' (RB): no weekly stats[] entry for 'Mike Boone' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] "D'Onta Foreman" (RB): no weekly stats[] entry for "D'Onta Foreman" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Royce Freeman' (RB): no weekly stats[] entry for 'Royce Freeman' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Michael Badgley' (K): no weekly stats[] entry for 'Michael Badgley' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Matt Breida' (RB): no weekly stats[] entry for 'Matt Breida' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Geoff Swaim' (TE): no weekly stats[] entry for 'Geoff Swaim' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Zane Gonzalez' (K): no weekly stats[] entry for 'Zane Gonzalez' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Anthony Miller' (WR): no weekly stats[] entry for 'Anthony Miller' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Ezekiel Elliott' (RB): no weekly stats[] entry for 'Ezekiel Elliott' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Gus Edwards' (RB): no weekly stats[] entry for 'Gus Edwards' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Kenyan Drake' (RB): no weekly stats[] entry for 'Kenyan Drake' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Tyler Boyd' (WR): no weekly stats[] entry for 'Tyler Boyd' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Corey Clement' (RB): no weekly stats[] entry for 'Corey Clement' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jamaal Williams' (RB): no weekly stats[] entry for 'Jamaal Williams' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Ty Montgomery II' (RB): no weekly stats[] entry for 'Ty Montgomery II' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Chris Conley' (WR): no weekly stats[] entry for 'Chris Conley' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'DeVante Parker' (WR): no weekly stats[] entry for 'DeVante Parker' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Melvin Gordon III' (RB): no weekly stats[] entry for 'Melvin Gordon III' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Michael Thomas' (WR): no weekly stats[] entry for 'Michael Thomas' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Nelson Agholor' (WR): no weekly stats[] entry for 'Nelson Agholor' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Jamison Crowder' (WR): no weekly stats[] entry for 'Jamison Crowder' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Robbie Chosen' (WR): no weekly stats[] entry for 'Robbie Chosen' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Willie Snead IV' (WR): no weekly stats[] entry for 'Willie Snead IV' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Damien Williams' (RB): no weekly stats[] entry for 'Damien Williams' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Derek Carr' (QB): no weekly stats[] entry for 'Derek Carr' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Allen Robinson' (WR): no weekly stats[] entry for 'Allen Robinson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Odell Beckham Jr.' (WR): no weekly stats[] entry for 'Odell Beckham Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Marquise Goodwin' (WR): no weekly stats[] entry for 'Marquise Goodwin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Justin Tucker' (K): no weekly stats[] entry for 'Justin Tucker' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jerick McKinnon' (RB): no weekly stats[] entry for 'Jerick McKinnon' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Latavius Murray' (RB): no weekly stats[] entry for 'Latavius Murray' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Brett Maher' (K): no weekly stats[] entry for 'Brett Maher' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Greg Zuerlein' (K): no weekly stats[] entry for 'Greg Zuerlein' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Julio Jones' (WR): no weekly stats[] entry for 'Julio Jones' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Ryan Tannehill' (QB): no weekly stats[] entry for 'Ryan Tannehill' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Randall Cobb' (WR): no weekly stats[] entry for 'Randall Cobb' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Marvin Jones Jr.' (WR): no weekly stats[] entry for 'Marvin Jones Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Taiwan Jones' (RB): no weekly stats[] entry for 'Taiwan Jones' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Randy Bullock' (K): no weekly stats[] entry for 'Randy Bullock' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jimmy Graham' (TE): no weekly stats[] entry for 'Jimmy Graham' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Mason Crosby' (K): no weekly stats[] entry for 'Mason Crosby' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] "Lil'Jordan Humphrey" (WR): no weekly stats[] entry for "Lil'Jordan Humphrey" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fu
+    [ESPNSchemaError] 'Keelan Doss' (WR): no weekly stats[] entry for 'Keelan Doss' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Deonte Harty' (WR): no weekly stats[] entry for 'Deonte Harty' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Nsimba Webster' (WR): no weekly stats[] entry for 'Nsimba Webster' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] "D'Ernest Johnson" (RB): no weekly stats[] entry for "D'Ernest Johnson" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Jesper Horsted' (TE): no weekly stats[] entry for 'Jesper Horsted' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Malik Turner' (WR): no weekly stats[] entry for 'Malik Turner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'J.P. Holtz' (RB): no weekly stats[] entry for 'J.P. Holtz' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Khari Blasingame' (RB): no weekly stats[] entry for 'Khari Blasingame' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Stanley Morgan Jr.' (WR): no weekly stats[] entry for 'Stanley Morgan Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Jalen Guyton' (WR): no weekly stats[] entry for 'Jalen Guyton' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jakob Johnson' (RB): no weekly stats[] entry for 'Jakob Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Trenton Irwin' (WR): no weekly stats[] entry for 'Trenton Irwin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'PJ Walker' (QB): no weekly stats[] entry for 'PJ Walker' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] "Ke'Shawn Vaughn" (RB): no weekly stats[] entry for "Ke'Shawn Vaughn" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Darrynton Evans' (RB): no weekly stats[] entry for 'Darrynton Evans' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Joshua Kelley' (RB): no weekly stats[] entry for 'Joshua Kelley' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'KJ Hamler' (WR): no weekly stats[] entry for 'KJ Hamler' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Chase Claypool' (WR): no weekly stats[] entry for 'Chase Claypool' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Lynn Bowden Jr.' (WR): no weekly stats[] entry for 'Lynn Bowden Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Quintez Cephus' (WR): no weekly stats[] entry for 'Quintez Cephus' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Josiah Deguara' (TE): no weekly stats[] entry for 'Josiah Deguara' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Donovan Peoples-Jones' (WR): no weekly stats[] entry for 'Donovan Peoples-Jones' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. 
+    [ESPNSchemaError] 'Brycen Hopkins' (TE): no weekly stats[] entry for 'Brycen Hopkins' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Dalton Keene' (TE): no weekly stats[] entry for 'Dalton Keene' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Gabe Davis' (WR): no weekly stats[] entry for 'Gabe Davis' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Quez Watkins' (WR): no weekly stats[] entry for 'Quez Watkins' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Collin Johnson' (WR): no weekly stats[] entry for 'Collin Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'K.J. Osborn' (WR): no weekly stats[] entry for 'K.J. Osborn' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'James Proche II' (WR): no weekly stats[] entry for 'James Proche II' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Stephen Sullivan' (TE): no weekly stats[] entry for 'Stephen Sullivan' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Ben DiNucci' (QB): no weekly stats[] entry for 'Ben DiNucci' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Jake Fromm' (QB): no weekly stats[] entry for 'Jake Fromm' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Isaiah Hodgins' (WR): no weekly stats[] entry for 'Isaiah Hodgins' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Tyler Davis' (TE): no weekly stats[] entry for 'Tyler Davis' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Anthony McFarland Jr.' (RB): no weekly stats[] entry for 'Anthony McFarland Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. 
+    [ESPNSchemaError] "La'Mical Perine" (RB): no weekly stats[] entry for "La'Mical Perine" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Marquez Callaway' (WR): no weekly stats[] entry for 'Marquez Callaway' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'JaMycal Hasty' (RB): no weekly stats[] entry for 'JaMycal Hasty' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'J.J. Taylor' (RB): no weekly stats[] entry for 'J.J. Taylor' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'James Robinson' (RB): no weekly stats[] entry for 'James Robinson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Kirk Merritt' (RB): no weekly stats[] entry for 'Kirk Merritt' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Malik Taylor' (WR): no weekly stats[] entry for 'Malik Taylor' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'John Wolford' (QB): no weekly stats[] entry for 'John Wolford' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Sean McKeon' (TE): no weekly stats[] entry for 'Sean McKeon' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Noah Togiai' (TE): no weekly stats[] entry for 'Noah Togiai' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Dan Chisena' (WR): no weekly stats[] entry for 'Dan Chisena' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Jonathan Ward' (RB): no weekly stats[] entry for 'Jonathan Ward' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Lawrence Cager' (TE): no weekly stats[] entry for 'Lawrence Cager' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Kevin Rader' (TE): no weekly stats[] entry for 'Kevin Rader' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Dominique Dafney' (TE): no weekly stats[] entry for 'Dominique Dafney' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Matt Sokol' (TE): no weekly stats[] entry for 'Matt Sokol' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Tony Jones Jr.' (RB): no weekly stats[] entry for 'Tony Jones Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Tyler Huntley' (QB): no weekly stats[] entry for 'Tyler Huntley' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Kristian Wilkerson' (WR): no weekly stats[] entry for 'Kristian Wilkerson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Alex Bachman' (WR): no weekly stats[] entry for 'Alex Bachman' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Tony Brown' (WR): no weekly stats[] entry for 'Tony Brown' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Kadarius Toney' (WR): no weekly stats[] entry for 'Kadarius Toney' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Amari Rodgers' (WR): no weekly stats[] entry for 'Amari Rodgers' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Chris Evans' (RB): no weekly stats[] entry for 'Chris Evans' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Jermar Jefferson' (RB): no weekly stats[] entry for 'Jermar Jefferson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Dez Fitzpatrick' (WR): no weekly stats[] entry for 'Dez Fitzpatrick' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Frank Darby' (WR): no weekly stats[] entry for 'Frank Darby' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Anthony Schwartz' (WR): no weekly stats[] entry for 'Anthony Schwartz' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Gary Brightwell' (RB): no weekly stats[] entry for 'Gary Brightwell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Jaelon Darden' (WR): no weekly stats[] entry for 'Jaelon Darden' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Demetric Felton' (RB): no weekly stats[] entry for 'Demetric Felton' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Jacob Harris' (WR): no weekly stats[] entry for 'Jacob Harris' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Ben Mason' (RB): no weekly stats[] entry for 'Ben Mason' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] "Tre' McKitty" (TE): no weekly stats[] entry for "Tre' McKitty" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Seth Williams' (WR): no weekly stats[] entry for 'Seth Williams' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Ian Book' (QB): no weekly stats[] entry for 'Ian Book' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week) 
+    [ESPNSchemaError] 'Michael Strachan' (WR): no weekly stats[] entry for 'Michael Strachan' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Sam Ehlinger' (QB): no weekly stats[] entry for 'Sam Ehlinger' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jake Funk' (RB): no weekly stats[] entry for 'Jake Funk' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Dax Milne' (WR): no weekly stats[] entry for 'Dax Milne' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Jaret Patterson' (RB): no weekly stats[] entry for 'Jaret Patterson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Matt Ammendola' (K): no weekly stats[] entry for 'Matt Ammendola' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Jody Fortson' (TE): no weekly stats[] entry for 'Jody Fortson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Godwin Igwebuike' (RB): no weekly stats[] entry for 'Godwin Igwebuike' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Derrick Gore' (RB): no weekly stats[] entry for 'Derrick Gore' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Parker Hesse' (TE): no weekly stats[] entry for 'Parker Hesse' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Deon Jackson' (RB): no weekly stats[] entry for 'Deon Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'David Wells' (TE): no weekly stats[] entry for 'David Wells' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Adam Prentice' (RB): no weekly stats[] entry for 'Adam Prentice' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Mitchell Wilcox' (TE): no weekly stats[] entry for 'Mitchell Wilcox' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Giovanni Ricci' (TE): no weekly stats[] entry for 'Giovanni Ricci' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Michael Bandy' (WR): no weekly stats[] entry for 'Michael Bandy' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Easop Winston Jr.' (WR): no weekly stats[] entry for 'Easop Winston Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Hunter Kampmoyer' (TE): no weekly stats[] entry for 'Hunter Kampmoyer' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Matt Bushman' (TE): no weekly stats[] entry for 'Matt Bushman' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Josh Johnson' (RB): no weekly stats[] entry for 'Josh Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Tarik Black' (WR): no weekly stats[] entry for 'Tarik Black' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Tyler Mabry' (TE): no weekly stats[] entry for 'Tyler Mabry' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Cody Thompson' (WR): no weekly stats[] entry for 'Cody Thompson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Isaiah Spiller' (RB): no weekly stats[] entry for 'Isaiah Spiller' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Cade York' (K): no weekly stats[] entry for 'Cade York' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Snoop Conner' (RB): no weekly stats[] entry for 'Snoop Conner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Desmond Ridder' (QB): no weekly stats[] entry for 'Desmond Ridder' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Matt Corral' (QB): no weekly stats[] entry for 'Matt Corral' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Tyrion Davis-Price' (RB): no weekly stats[] entry for 'Tyrion Davis-Price' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Greg Dulcich' (TE): no weekly stats[] entry for 'Greg Dulcich' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Kyle Philips' (WR): no weekly stats[] entry for 'Kyle Philips' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Trestan Ebner' (RB): no weekly stats[] entry for 'Trestan Ebner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Kevin Harris' (RB): no weekly stats[] entry for 'Kevin Harris' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Cole Turner' (TE): no weekly stats[] entry for 'Cole Turner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Bailey Zappe' (QB): no weekly stats[] entry for 'Bailey Zappe' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Nick Muse' (TE): no weekly stats[] entry for 'Nick Muse' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Montrell Washington' (WR): no weekly stats[] entry for 'Montrell Washington' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fu
+    [ESPNSchemaError] 'Zander Horvath' (RB): no weekly stats[] entry for 'Zander Horvath' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Samori Toure' (WR): no weekly stats[] entry for 'Samori Toure' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Carson Strong' (QB): no weekly stats[] entry for 'Carson Strong' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Chris Oladokun' (QB): no weekly stats[] entry for 'Chris Oladokun' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Brittain Brown' (RB): no weekly stats[] entry for 'Brittain Brown' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Brandon Smith' (WR): no weekly stats[] entry for 'Brandon Smith' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Justyn Ross' (WR): no weekly stats[] entry for 'Justyn Ross' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Jonathan Garibay' (K): no weekly stats[] entry for 'Jonathan Garibay' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Jalen Wydermyer' (TE): no weekly stats[] entry for 'Jalen Wydermyer' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Abram Smith' (RB): no weekly stats[] entry for 'Abram Smith' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Mataeo Durant' (RB): no weekly stats[] entry for 'Mataeo Durant' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Deven Thompkins' (WR): no weekly stats[] entry for 'Deven Thompkins' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Lance McCutcheon' (WR): no weekly stats[] entry for 'Lance McCutcheon' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Devon Allen' (WR): no weekly stats[] entry for 'Devon Allen' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'James McCourt' (K): no weekly stats[] entry for 'James McCourt' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'DJ Turner' (WR): no weekly stats[] entry for 'DJ Turner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Peyton Hendershot' (TE): no weekly stats[] entry for 'Peyton Hendershot' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Armani Rogers' (TE): no weekly stats[] entry for 'Armani Rogers' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jalen Virgil' (WR): no weekly stats[] entry for 'Jalen Virgil' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jared Bernhardt' (WR): no weekly stats[] entry for 'Jared Bernhardt' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Quintin Morris' (TE): no weekly stats[] entry for 'Quintin Morris' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Shane Buechele' (QB): no weekly stats[] entry for 'Shane Buechele' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Kendric Pryor' (WR): no weekly stats[] entry for 'Kendric Pryor' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Malik Davis' (RB): no weekly stats[] entry for 'Malik Davis' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Ronnie Rivers' (RB): no weekly stats[] entry for 'Ronnie Rivers' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Troy Hairston' (RB): no weekly stats[] entry for 'Troy Hairston' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Caleb Shudak' (K): no weekly stats[] entry for 'Caleb Shudak' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Raleigh Webb' (WR): no weekly stats[] entry for 'Raleigh Webb' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Kaylon Geiger' (WR): no weekly stats[] entry for 'Kaylon Geiger' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Nikola Kalinic' (TE): no weekly stats[] entry for 'Nikola Kalinic' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Daylen Baldwin' (WR): no weekly stats[] entry for 'Daylen Baldwin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Anthony Brown Jr.' (QB): no weekly stats[] entry for 'Anthony Brown Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Chase Allen' (TE): no weekly stats[] entry for 'Chase Allen' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Ethan Fernea' (WR): no weekly stats[] entry for 'Ethan Fernea' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Josh Ali' (WR): no weekly stats[] entry for 'Josh Ali' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week) 
+    [ESPNSchemaError] 'Stanley Berryhill' (WR): no weekly stats[] entry for 'Stanley Berryhill' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Dennis Houston' (WR): no weekly stats[] entry for 'Dennis Houston' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Kyric McGowan' (WR): no weekly stats[] entry for 'Kyric McGowan' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Tay Martin' (WR): no weekly stats[] entry for 'Tay Martin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Kwamie Lassiter II' (WR): no weekly stats[] entry for 'Kwamie Lassiter II' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Johnny Johnson III' (WR): no weekly stats[] entry for 'Johnny Johnson III' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Braylon Sanders' (WR): no weekly stats[] entry for 'Braylon Sanders' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Maurice Alexander' (WR): no weekly stats[] entry for 'Maurice Alexander' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Andre Baccellia' (WR): no weekly stats[] entry for 'Andre Baccellia' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] "D'vonte Price" (RB): no weekly stats[] entry for "D'vonte Price" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Roger Carter Jr.' (TE): no weekly stats[] entry for 'Roger Carter Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Nick Sciba' (K): no weekly stats[] entry for 'Nick Sciba' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Zach Evans' (RB): no weekly stats[] entry for 'Zach Evans' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Cameron Latu' (TE): no weekly stats[] entry for 'Cameron Latu' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Christopher Dunn' (K): no weekly stats[] entry for 'Christopher Dunn' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Sean Clifford' (QB): no weekly stats[] entry for 'Sean Clifford' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Evan Hull' (RB): no weekly stats[] entry for 'Evan Hull' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Israel Abanikanda' (RB): no weekly stats[] entry for 'Israel Abanikanda' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Lew Nichols' (RB): no weekly stats[] entry for 'Lew Nichols' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Grant DuBose' (WR): no weekly stats[] entry for 'Grant DuBose' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Zack Kuntz' (TE): no weekly stats[] entry for 'Zack Kuntz' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Jake Haener' (QB): no weekly stats[] entry for 'Jake Haener' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Dorian Thompson-Robinson' (QB): no weekly stats[] entry for 'Dorian Thompson-Robinson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.
+    [ESPNSchemaError] 'Ronnie Bell' (WR): no weekly stats[] entry for 'Ronnie Bell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Antoine Green' (WR): no weekly stats[] entry for 'Antoine Green' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jaren Hall' (QB): no weekly stats[] entry for 'Jaren Hall' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Clayton Tune' (QB): no weekly stats[] entry for 'Clayton Tune' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Max Duggan' (QB): no weekly stats[] entry for 'Max Duggan' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'DeWayne McBride' (RB): no weekly stats[] entry for 'DeWayne McBride' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'A.T. Perry' (WR): no weekly stats[] entry for 'A.T. Perry' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Colton Dowell' (WR): no weekly stats[] entry for 'Colton Dowell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Tanner Brown' (K): no weekly stats[] entry for 'Tanner Brown' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Mohamed Ibrahim' (RB): no weekly stats[] entry for 'Mohamed Ibrahim' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Joseph Ngata' (WR): no weekly stats[] entry for 'Joseph Ngata' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Elijah Dotson' (RB): no weekly stats[] entry for 'Elijah Dotson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Chase Cota' (WR): no weekly stats[] entry for 'Chase Cota' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Malik Cunningham' (WR): no weekly stats[] entry for 'Malik Cunningham' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Elijah Cooks' (WR): no weekly stats[] entry for 'Elijah Cooks' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Curtis Hodges' (TE): no weekly stats[] entry for 'Curtis Hodges' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Kearis Jackson' (WR): no weekly stats[] entry for 'Kearis Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Chris Blair' (WR): no weekly stats[] entry for 'Chris Blair' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Nathan Rourke' (QB): no weekly stats[] entry for 'Nathan Rourke' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Shedrick Jackson' (WR): no weekly stats[] entry for 'Shedrick Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Cole Fotheringham' (TE): no weekly stats[] entry for 'Cole Fotheringham' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Terrell Bynum' (WR): no weekly stats[] entry for 'Terrell Bynum' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Ellis Merriweather' (RB): no weekly stats[] entry for 'Ellis Merriweather' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Owen Wright' (RB): no weekly stats[] entry for 'Owen Wright' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Henry Pearson' (TE): no weekly stats[] entry for 'Henry Pearson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Lucky Jackson' (WR): no weekly stats[] entry for 'Lucky Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jordan Mims' (RB): no weekly stats[] entry for 'Jordan Mims' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Princeton Fant' (TE): no weekly stats[] entry for 'Princeton Fant' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Rodney Williams' (TE): no weekly stats[] entry for 'Rodney Williams' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Josh Pederson' (TE): no weekly stats[] entry for 'Josh Pederson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Lucas Havrisik' (K): no weekly stats[] entry for 'Lucas Havrisik' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'SaRodorick Thompson Jr.' (RB): no weekly stats[] entry for 'SaRodorick Thompson Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g
+    [ESPNSchemaError] 'Dylan Drummond' (WR): no weekly stats[] entry for 'Dylan Drummond' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Brenden Rice' (WR): no weekly stats[] entry for 'Brenden Rice' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jawhar Jordan' (RB): no weekly stats[] entry for 'Jawhar Jordan' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Cornelius Johnson' (WR): no weekly stats[] entry for 'Cornelius Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Tejhaun Palmer' (WR): no weekly stats[] entry for 'Tejhaun Palmer' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Jordan Travis' (QB): no weekly stats[] entry for 'Jordan Travis' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Devin Leary' (QB): no weekly stats[] entry for 'Devin Leary' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Michael Pratt' (QB): no weekly stats[] entry for 'Michael Pratt' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Louis Rees-Zammit' (RB): no weekly stats[] entry for 'Louis Rees-Zammit' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Dante Miller' (RB): no weekly stats[] entry for 'Dante Miller' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Blake Watson' (RB): no weekly stats[] entry for 'Blake Watson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Michael Wiley' (RB): no weekly stats[] entry for 'Michael Wiley' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Ramel Keyton' (WR): no weekly stats[] entry for 'Ramel Keyton' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Tyreik McAllister' (WR): no weekly stats[] entry for 'Tyreik McAllister' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Brayden Narveson' (K): no weekly stats[] entry for 'Brayden Narveson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Cody Schrader' (RB): no weekly stats[] entry for 'Cody Schrader' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Thomas Odukoya' (TE): no weekly stats[] entry for 'Thomas Odukoya' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Aaron Shampklin' (RB): no weekly stats[] entry for 'Aaron Shampklin' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Kaden Davis' (WR): no weekly stats[] entry for 'Kaden Davis' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Kendall Milton' (RB): no weekly stats[] entry for 'Kendall Milton' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Chris Collier' (RB): no weekly stats[] entry for 'Chris Collier' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jaylen Johnson' (WR): no weekly stats[] entry for 'Jaylen Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Frank Gore Jr.' (RB): no weekly stats[] entry for 'Frank Gore Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Jared Wayne' (WR): no weekly stats[] entry for 'Jared Wayne' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Baylor Cupp' (TE): no weekly stats[] entry for 'Baylor Cupp' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'E.J. Jenkins' (TE): no weekly stats[] entry for 'E.J. Jenkins' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jacob Kibodi' (RB): no weekly stats[] entry for 'Jacob Kibodi' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jermaine Jackson' (WR): no weekly stats[] entry for 'Jermaine Jackson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'John Samuel Shenker' (TE): no weekly stats[] entry for 'John Samuel Shenker' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fu
+    [ESPNSchemaError] 'Luke Lachey' (TE): no weekly stats[] entry for 'Luke Lachey' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Cam Miller' (QB): no weekly stats[] entry for 'Cam Miller' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Ricky White III' (WR): no weekly stats[] entry for 'Ricky White III' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Caleb Lohner' (TE): no weekly stats[] entry for 'Caleb Lohner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Junior Bergen' (WR): no weekly stats[] entry for 'Junior Bergen' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Kyle McCord' (QB): no weekly stats[] entry for 'Kyle McCord' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Isaiah Neyor' (WR): no weekly stats[] entry for 'Isaiah Neyor' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Xavier Restrepo' (WR): no weekly stats[] entry for 'Xavier Restrepo' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Donovan Edwards' (RB): no weekly stats[] entry for 'Donovan Edwards' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Corey Kiner' (RB): no weekly stats[] entry for 'Corey Kiner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Theo Wease Jr.' (WR): no weekly stats[] entry for 'Theo Wease Jr.' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future 
+    [ESPNSchemaError] 'Chandler Brayboy' (WR): no weekly stats[] entry for 'Chandler Brayboy' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] "Ja'Corey Brooks" (WR): no weekly stats[] entry for "Ja'Corey Brooks" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Philip Rivers' (QB): no weekly stats[] entry for 'Philip Rivers' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Brennan Presley' (WR): no weekly stats[] entry for 'Brennan Presley' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Zach Horton' (TE): no weekly stats[] entry for 'Zach Horton' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Jakobie Keeney-James' (WR): no weekly stats[] entry for 'Jakobie Keeney-James' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. f
+    [ESPNSchemaError] "Ke'Shawn Williams" (WR): no weekly stats[] entry for "Ke'Shawn Williams" season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futu
+    [ESPNSchemaError] 'Brady Cook' (QB): no weekly stats[] entry for 'Brady Cook' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week
+    [ESPNSchemaError] 'Zaire Mitchell-Paden' (TE): no weekly stats[] entry for 'Zaire Mitchell-Paden' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. f
+    [ESPNSchemaError] 'Drake Dabney' (TE): no weekly stats[] entry for 'Drake Dabney' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Ben Yurosek' (TE): no weekly stats[] entry for 'Ben Yurosek' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Max Brosmer' (QB): no weekly stats[] entry for 'Max Brosmer' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Jacoby Jones' (WR): no weekly stats[] entry for 'Jacoby Jones' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Dalevon Campbell' (WR): no weekly stats[] entry for 'Dalevon Campbell' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. futur
+    [ESPNSchemaError] 'Nick Kallerup' (TE): no weekly stats[] entry for 'Nick Kallerup' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jeshaun Jones' (WR): no weekly stats[] entry for 'Jeshaun Jones' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Charlie Smyth' (K): no weekly stats[] entry for 'Charlie Smyth' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Hayden Rucci' (TE): no weekly stats[] entry for 'Hayden Rucci' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Amar Johnson' (RB): no weekly stats[] entry for 'Amar Johnson' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Kedon Slovis' (QB): no weekly stats[] entry for 'Kedon Slovis' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Keleki Latu' (TE): no weekly stats[] entry for 'Keleki Latu' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future wee
+    [ESPNSchemaError] 'Treyton Welch' (TE): no weekly stats[] entry for 'Treyton Welch' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'CJ Dippre' (TE): no weekly stats[] entry for 'CJ Dippre' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Adrian Martinez' (QB): no weekly stats[] entry for 'Adrian Martinez' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Jackson Meeks' (WR): no weekly stats[] entry for 'Jackson Meeks' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Quentin Skinner' (WR): no weekly stats[] entry for 'Quentin Skinner' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Ulysses Bentley IV' (RB): no weekly stats[] entry for 'Ulysses Bentley IV' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. fut
+    [ESPNSchemaError] 'Sal Cannella' (TE): no weekly stats[] entry for 'Sal Cannella' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Coleman Owen' (WR): no weekly stats[] entry for 'Coleman Owen' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Ben Sauls' (K): no weekly stats[] entry for 'Ben Sauls' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week)
+    [ESPNSchemaError] 'Jacardia Wright' (RB): no weekly stats[] entry for 'Jacardia Wright' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future
+    [ESPNSchemaError] 'Dalen Cambre' (WR): no weekly stats[] entry for 'Dalen Cambre' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future we
+    [ESPNSchemaError] 'Jahdae Walker' (WR): no weekly stats[] entry for 'Jahdae Walker' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+    [ESPNSchemaError] 'Jimmy Holiday' (WR): no weekly stats[] entry for 'Jimmy Holiday' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future w
+
+Full stats[] for example D/ST failure ('Steelers D/ST'), 38 entries:
+    seasonId=2025 scoringPeriodId=14 statSourceId=1 statSplitTypeId=1 appliedTotal=4.7230021
+    seasonId=2025 scoringPeriodId=13 statSourceId=1 statSplitTypeId=1 appliedTotal=4.61753327
+    seasonId=2025 scoringPeriodId=16 statSourceId=1 statSplitTypeId=1 appliedTotal=2.41800997
+    seasonId=2025 scoringPeriodId=15 statSourceId=1 statSplitTypeId=1 appliedTotal=6.77573938
+    seasonId=2025 scoringPeriodId=18 statSourceId=1 statSplitTypeId=1 appliedTotal=5.50475051
+    seasonId=2025 scoringPeriodId=17 statSourceId=1 statSplitTypeId=1 appliedTotal=7.20123959
+    seasonId=2025 scoringPeriodId=2 statSourceId=0 statSplitTypeId=1 appliedTotal=4.0
+    seasonId=2025 scoringPeriodId=0 statSourceId=1 statSplitTypeId=0 appliedTotal=132.67337907
+    seasonId=2025 scoringPeriodId=10 statSourceId=1 statSplitTypeId=1 appliedTotal=5.31226756
+    seasonId=2025 scoringPeriodId=12 statSourceId=1 statSplitTypeId=1 appliedTotal=4.26245859
+    seasonId=2025 scoringPeriodId=11 statSourceId=1 statSplitTypeId=1 appliedTotal=6.30141224
+    seasonId=2025 scoringPeriodId=0 statSourceId=0 statSplitTypeId=0 appliedTotal=113.0
+    seasonId=2025 scoringPeriodId=11 statSourceId=0 statSplitTypeId=1 appliedTotal=22.0
+    seasonId=2025 scoringPeriodId=3 statSourceId=0 statSplitTypeId=1 appliedTotal=15.0
+    seasonId=2025 scoringPeriodId=4 statSourceId=0 statSplitTypeId=1 appliedTotal=9.0
+    seasonId=2025 scoringPeriodId=14 statSourceId=0 statSplitTypeId=1 appliedTotal=1.0
+    seasonId=2025 scoringPeriodId=1 statSourceId=1 statSplitTypeId=1 appliedTotal=8.27423407
+    seasonId=2025 scoringPeriodId=3 statSourceId=1 statSplitTypeId=1 appliedTotal=5.8141659
+    seasonId=2025 scoringPeriodId=0 statSourceId=1 statSplitTypeId=2 appliedTotal=5.74511478
+    seasonId=2025 scoringPeriodId=2 statSourceId=1 statSplitTypeId=1 appliedTotal=7.64627302
+    seasonId=2025 scoringPeriodId=0 statSourceId=1 statSplitTypeId=1 appliedTotal=-0.89124969
+    seasonId=2025 scoringPeriodId=9 statSourceId=1 statSplitTypeId=1 appliedTotal=3.14582929
+    seasonId=2025 scoringPeriodId=15 statSourceId=0 statSplitTypeId=1 appliedTotal=9.0
+    seasonId=2025 scoringPeriodId=8 statSourceId=1 statSplitTypeId=1 appliedTotal=3.56297501
+    seasonId=2025 scoringPeriodId=8 statSourceId=0 statSplitTypeId=1 appliedTotal=-8.0
+    seasonId=2025 scoringPeriodId=6 statSourceId=0 statSplitTypeId=1 appliedTotal=11.0
+    seasonId=2025 scoringPeriodId=16 statSourceId=0 statSplitTypeId=1 appliedTotal=4.0
+    seasonId=2025 scoringPeriodId=10 statSourceId=0 statSplitTypeId=1 appliedTotal=5.0
+    seasonId=2025 scoringPeriodId=4 statSourceId=1 statSplitTypeId=1 appliedTotal=7.54999597
+    seasonId=2025 scoringPeriodId=7 statSourceId=1 statSplitTypeId=1 appliedTotal=7.85796708
+    seasonId=2025 scoringPeriodId=17 statSourceId=0 statSplitTypeId=1 appliedTotal=11.0
+    seasonId=2025 scoringPeriodId=6 statSourceId=1 statSplitTypeId=1 appliedTotal=7.6808574
+    seasonId=2025 scoringPeriodId=18 statSourceId=0 statSplitTypeId=1 appliedTotal=4.0
+    seasonId=2025 scoringPeriodId=1 statSourceId=0 statSplitTypeId=1 appliedTotal=1.0
+    seasonId=2025 scoringPeriodId=7 statSourceId=0 statSplitTypeId=1 appliedTotal=-4.0
+    seasonId=2025 scoringPeriodId=13 statSourceId=0 statSplitTypeId=1 appliedTotal=3.0
+    seasonId=2025 scoringPeriodId=9 statSourceId=0 statSplitTypeId=1 appliedTotal=16.0
+    seasonId=2025 scoringPeriodId=12 statSourceId=0 statSplitTypeId=1 appliedTotal=10.0
+
+Does this D/ST have ANY statSourceId=1 (projected) entry, for ANY period? True
+
+======================================================================
+RESULT: SURVEY COMPLETE (this script does not pass/fail — it's diagnostic only)
+======================================================================
+
+Press Enter to close this window...

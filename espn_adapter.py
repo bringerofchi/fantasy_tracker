@@ -138,7 +138,26 @@ class ESPNSourceAdapter(SourceAdapter):
         raw = self._fetch_raw(season_id, player_ids=player_ids)
         observations: list[NormalizedObservation] = []
         for entry in raw["players"]:
-            observations.append(parse_weekly_projection(entry, season_id, week_number))
+            # PROJECTION: backend v1 full-population survey (2026-09) found that at
+            # full population scale, missing a weekly projection is the COMMON case,
+            # not a corner case — 433/1090 players (~40%) lacked one for a single
+            # (season, week), for entirely mundane reasons: a team's bye week (zero
+            # stats[] entries at all for that period, for anyone on that team — not
+            # D/ST-specific), or a player who simply wasn't on an active/relevant
+            # roster that week. ESPN's unscoped population query surfaces its whole
+            # draftable/historical player-id space, not just that week's rostered
+            # players. The adapter's contract is therefore: absence is expected and
+            # must not abort the whole batch — only a genuine anomaly should.
+            # This does NOT weaken "never fabricate a value" (still true — a missing
+            # player simply produces no PROJECTION observation, never a substituted
+            # 0) and does NOT change how ambiguity is handled: >1 matching stats[]
+            # entries still raises ESPNDataAnomalyError (not a subclass of
+            # ESPNSchemaError — see espn_core.py), which is deliberately NOT caught
+            # here and propagates to abort the whole fetch(), same as for ACTUAL.
+            try:
+                observations.append(parse_weekly_projection(entry, season_id, week_number))
+            except ESPNSchemaError:
+                pass  # expected absence (bye week / not rostered that week) — skip this player only
             try:
                 observations.append(parse_weekly_actual(entry, season_id, week_number))
             except ESPNSchemaError:

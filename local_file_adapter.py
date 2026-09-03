@@ -63,7 +63,17 @@ class LocalFileSourceAdapter(SourceAdapter):
     def fetch(self, season_id: int, week_number: int) -> list[NormalizedObservation]:
         observations: list[NormalizedObservation] = []
         for entry in self._players_for_season(season_id):
-            observations.append(parse_weekly_projection(entry, season_id, week_number))
+            # PROJECTION: expected absence (e.g. a bye week, or a player not
+            # rostered/relevant that period) is skipped for just this player,
+            # not treated as fatal — see espn_adapter.py's fetch() for the full
+            # rationale and the backend v1 full-population survey (2026-09)
+            # this is based on. A genuine anomaly (ESPNDataAnomalyError, >1
+            # matching stats[] entries) is deliberately NOT caught here and
+            # still propagates to abort the whole fetch().
+            try:
+                observations.append(parse_weekly_projection(entry, season_id, week_number))
+            except ESPNSchemaError:
+                pass
             try:
                 observations.append(parse_weekly_actual(entry, season_id, week_number))
             except ESPNSchemaError:

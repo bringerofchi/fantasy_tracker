@@ -119,14 +119,36 @@ class TestWeekNumberChangesResult:
 
 
 class TestMissingDataFailsLoudly:
-    """Do not treat missing weekly data as zero (explicit brief requirement)."""
+    """
+    Do not treat missing weekly data as zero (explicit brief requirement).
 
-    def test_future_week_with_no_projection_raises(self, adapter_2025):
-        # Week 25 does not exist in the 18-week-season fixture data at all.
-        with pytest.raises(ESPNSchemaError):
-            adapter_2025.fetch(season_id=2025, week_number=25)
+    Backend v1 contract change (2026-09), from the full-population survey:
+    a MISSING projection/actual for a given player/week is expected
+    absence (a bye week, a player not rostered that week, etc.) and is
+    now skipped per-player rather than fatal to the whole fetch() — see
+    espn_adapter.py's fetch() and test_espn_core.py for the full
+    rationale and the anomaly-vs-absence tests. "Skipped" still means
+    "produces no observation for that fact," never a fabricated 0 — the
+    brief's requirement is intact, only the failure mode changed from
+    "abort everything" to "omit just that fact."
+    """
+
+    def test_future_week_produces_no_projection_observation(self, adapter_2025):
+        # Week 25 does not exist in the 18-week-season fixture data at all —
+        # every player legitimately has no projection for it. This must
+        # produce zero PROJECTION (and zero ACTUAL) observations for these
+        # players — not a fabricated 0, and, under the new contract, not an
+        # exception either: absence is expected, not fatal.
+        obs = adapter_2025.fetch(season_id=2025, week_number=25)
+        assert _by(obs, DataType.PROJECTION) == []
+        assert _by(obs, DataType.ACTUAL) == []
 
     def test_unknown_season_raises(self, adapter_2025):
+        # A season the fixture has no data for AT ALL is a different
+        # failure mode than one player's missing weekly fact — this is a
+        # structural lookup failure (LocalFileSourceAdapter's season
+        # lookup, before any per-player parsing even starts), not an
+        # expected per-player absence, and correctly still raises.
         with pytest.raises(ESPNSchemaError):
             adapter_2025.fetch(season_id=1999, week_number=5)
 

@@ -91,8 +91,20 @@ class SourceAdapter(ABC):
         """
         Return every NormalizedObservation this adapter can produce for the
         given season/week (projections, rankings, and actuals where
-        available). Must raise rather than silently return an empty or
-        partial result if the source's response doesn't match the shape
-        the adapter expects.
+        available). Must raise rather than silently substitute a
+        fabricated/default value if the source's response doesn't match
+        the shape the adapter expects for a fact it's asked to produce.
+
+        This does NOT mean every player must produce every observation
+        type: a source may legitimately have nothing to say about one
+        player for one (season, week) — a bye week, a player who wasn't
+        rostered/relevant that period, etc. (see ESPNSourceAdapter's
+        backend v1 review notes, 2026-09, for the empirical evidence this
+        distinction is based on). An adapter should skip that one
+        player/fact rather than fabricate a value AND rather than abort
+        the whole fetch() over an expected absence — but a genuine
+        anomaly in the source's data (e.g. ambiguous/conflicting entries
+        for what should be a single fact) is not an expected absence and
+        should still cause fetch() to fail loudly.
         """
         raise NotImplementedError

@@ -1,0 +1,19 @@
+(writing a full copy of this output to C:\Projects\fantasy_tracker\run_full_population_test_output.txt)
+
+======================================================================
+FULL-POPULATION FETCH TEST: season=2025 week=5, no player_ids filter
+======================================================================
+(fetching ESPN's entire player population in one request; may take a few seconds)
+
+Raw population returned by ESPN: 1090 players
+
+[FAIL] fetch() aborted the ENTIRE batch on ESPNSchemaError (fail-loud design):
+
+    no weekly stats[] entry for 'Steelers D/ST' season=2025 week=5 statSourceId=1; the source may not have this period's data yet (e.g. future week) — do not substitute 0 or a season total
+
+This confirms the review's open question: at least one player in the
+1090-player population lacks a weekly projection entry, and the
+current design aborts everything rather than skipping just that player.
+This needs a decision about the adapter's contract, not a silent patch.
+
+Press Enter to close this window...

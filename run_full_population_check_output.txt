@@ -1,0 +1,28 @@
+(writing a full copy of this output to C:\Projects\fantasy_tracker\run_full_population_check_output.txt)
+
+======================================================================
+FULL-POPULATION FETCH TEST: season=2025 week=5, no player_ids filter
+======================================================================
+(fetching ESPN's entire player population in one request; may take a few seconds)
+
+Raw population returned by ESPN: 1090 players
+
+[PASS] fetch() succeeded across the full 1090-player population with zero exceptions.
+Total observations: 2304
+    actual: 594
+    projection: 657
+    ranking: 1053
+
+Distinct players with a valid weekly projection: 657 / 1090
+
+[UNEXPECTED] fetch() succeeded but produced fewer projections than players in the
+population — investigate this; it shouldn't be possible given parse_weekly_projection()
+is never caught.
+
+Persisted to tracker_full_population.db: {'inserted': 2304, 'updated': 0, 'total_rows_after': 2304}
+
+======================================================================
+RESULT: PASSED
+======================================================================
+
+Press Enter to close this window...
