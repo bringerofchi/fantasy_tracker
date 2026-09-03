@@ -2,7 +2,9 @@
 
 A normalized, source-independent data model for NFL fantasy football data (projections, actual results, PPR rankings), backed by SQLite, with ESPN as the first working source adapter.
 
-**Status:** backend (data model + storage + ingestion + one real source adapter) is built and tested, and has been through one full review-and-correction round against real full-population data (2026-09) — see `PHASE_4C_STATUS.md` for what that round found and fixed. No UI yet — that's an explicit, deliberate scope decision, not an oversight.
+**Status: FROZEN (v1, 2026-09-03).** Backend (data model + storage + ingestion + one real source adapter) is built, tested, reviewed, corrected, and live-validated against ESPN's full player population — see `PHASE_4C_STATUS.md` for the full review round and freeze rationale. No UI yet — that's an explicit, deliberate scope decision, not an oversight.
+
+**Versioning note:** further changes to the data model, the ESPN adapter's parsing contract, or the storage schema are v2 work — a new review-and-decide cycle, not incremental patches to this frozen v1. This is what keeps the evidence and the absence-vs-anomaly contract established here from silently drifting. The next planned work is downstream: a second real source adapter (Yahoo) and cross-source integration against real data.
 
 ## Architecture
 

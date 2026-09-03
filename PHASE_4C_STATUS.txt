@@ -5,6 +5,7 @@
 **Phase 4C Integration/QC (against the standalone fixture + live ESPN only) → RUN, PASSED** (2026-09-02)
 **Phase 4C Tracker Integration → BLOCKED (2026-09-03): underlying tracker codebase not located, then superseded by a decision to build it — see below**
 **Tracker Backend v1 (data model, SQLite storage, ingestion pipeline) → BUILT (2026-09-03)**
+**Tracker Backend v1 → REVIEWED, CORRECTED (A/B/D fixes below), LIVE-VALIDATED AT FULL POPULATION → FROZEN (2026-09-03)**
 
 Conclusion: **the ESPN adapter itself is READY FOR INTEGRATION** — it is not waiting on further ESPN ranking research; the ranking gaps documented below are established source limitations, not open questions this adapter is blocked on. The `NormalizedObservation`/`SourceAdapter`/`LocalFileSourceAdapter` tracker architecture the original brief described as already existing was never found (see "Where is the tracker codebase?" below) — rather than continue searching, the project owner made the call to build it, using the proven ESPN adapter as the first real source. That backend now exists: see "Tracker Backend v1" below.
 
@@ -23,6 +24,12 @@ An independent review of the committed backend (against the three contracts: nor
 Also caught and fixed during this round, unrelated to the contract questions above: `run_full_population_check.py` (originally named `run_full_population_test.py`) accidentally matched pytest's default `*_test.py` collection glob, so `python -m pytest -v` would have imported and executed it — live network call and all — during what's supposed to be the offline unit suite. Renamed, and `pytest.ini` now restricts collection to `test_*.py` so this class of bug can't recur regardless of future script names.
 
 **Live confirmation, post-fix (2026-09-03):** `run_full_population_check.py` was re-run against real ESPN data after the fix above. Result: `fetch()` completed with zero exceptions across the full 1090-player population (previously: aborted on the first missing player). 657/1090 players (60.3%) produced a projection — matching the survey's prediction exactly (1090 − 433 = 657) — with the remainder correctly skipped rather than fabricated or fatal. One more small bug caught in the process: the script's own success-check still asserted the *pre-fix* rule ("success implies 100% coverage") and flagged this correct, expected outcome as `[UNEXPECTED]`. Not an adapter defect — a stale assertion in the diagnostic script itself, now fixed to match the new contract (partial coverage is expected; only zero coverage or an actual exception is flagged as suspicious).
+
+## Backend v1: FROZEN (2026-09-03)
+
+Frozen on the strength of more than a green test suite: a defensible, evidence-backed contract (missing source data is absence and is skipped; contradictory/duplicated source data is an anomaly and fails loudly), verified against real full-population ESPN data (1090 players, 0 exceptions, coverage matching the independently-derived prediction exactly), with two incidental defects (the scoring_format uniqueness gap and the pytest collection glob collision) caught and corrected rather than left latent.
+
+**Going forward, this is versioned, not incrementally patched.** Any further change to the normalized data model, the ESPN adapter's parsing contract, or the storage schema is v2 work — a new review-and-decide cycle, not a cleanup pass on v1 — specifically so the evidence and contract established in this round don't silently drift. The next work is downstream: a second real source adapter (Yahoo) and cross-source integration against real data, not further speculative changes to the ESPN adapter itself.
 
 ## Tracker Backend v1 — what was built (2026-09-03)
 
