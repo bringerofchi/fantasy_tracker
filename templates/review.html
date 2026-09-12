@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Review Queue ({{ total }} pending)</h2>
+
+  <form method="get" action="/review">
+    <div class="stat-row">
+      <label>Source</label>
+      <select name="source_name" onchange="this.form.submit()">
+        <option value="">All sources</option>
+        {% for s in by_source %}
+          <option value="{{ s['source_name'] or '' }}" {% if filter_source_name == (s['source_name'] or '') %}selected{% endif %}>
+            {{ s['source_name'] or '(none)' }} ({{ s['c'] }})
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Reason</label>
+      <select name="reason" onchange="this.form.submit()">
+        <option value="">All reasons</option>
+        {% for r in by_reason %}
+          <option value="{{ r['reason'] }}" {% if filter_reason == r['reason'] %}selected{% endif %}>
+            {{ r['reason']|replace("_", " ")|title }} ({{ r['c'] }})
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Type</label>
+      <select name="entity_type" onchange="this.form.submit()">
+        <option value="">All types</option>
+        {% for t in by_entity_type %}
+          <option value="{{ t['entity_type'] }}" {% if filter_entity_type == t['entity_type'] %}selected{% endif %}>
+            {{ t['entity_type'] }} ({{ t['c'] }})
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <noscript><button type="submit">Filter</button></noscript>
+  </form>
+
+  {% if filter_entity_type or filter_reason or filter_source_name %}
+  <form method="post" action="/review/bulk_reject" style="margin-top:10px;" onsubmit="return confirm('Reject all items matching the current filter? This cannot auto-undo, though nothing is deleted \u2014 re-running the import will re-propose them.');">
+    <input type="hidden" name="entity_type" value="{{ filter_entity_type }}">
+    <input type="hidden" name="reason" value="{{ filter_reason }}">
+    <input type="hidden" name="source_name" value="{{ filter_source_name }}">
+    <button type="submit" class="danger">Reject all matching this filter</button>
+    <span class="muted">(bulk-accept is intentionally not offered — approving unseen identities/values at scale defeats the point of review)</span>
+  </form>
+  {% endif %}
+</div>
+
+{% if not items %}
+  <div class="card"><p class="muted">Nothing matches the current filter.</p></div>
+{% endif %}
+
+{% for it in items %}
+<div class="card" style="background:#fafaf7;">
+  {% if it["entity_type"] == "proposed_observation" %}
+    {% set d = it["details_json"]|from_json %}
+    <p><strong>Extracted: {{ d.stat_name }} = {{ d.stat_value }}</strong>
+      <span class="badge partial">{{ it["confidence"] }} confidence ({{ "%.2f"|format(d.field_confidence) }})</span>
+    </p>
+    <p class="muted">
+      Player on screenshot: "<strong>{{ d.extracted_player_name }}</strong>"
+      ({{ d.identity_match_type }}{% if d.resolved_player_id %} -> player #{{ d.resolved_player_id }}{% endif %})
+      - Week {{ d.week_number }} - Source: {{ d.source_name }} - {{ d.data_type }}
+    </p>
+    {% if d.flags %}<p class="muted">Flags: {{ d.flags|join(" | ") }}</p>{% endif %}
+    {% if d.hard_invalid_reason %}<p class="muted">Invalid: {{ d.hard_invalid_reason }}</p>{% endif %}
+    <form method="post" action="/review/{{ it['review_id'] }}/resolve">
+      <input type="hidden" name="action" value="approved">
+      <div class="stat-row">
+        <label>Value to accept</label>
+        <input type="number" step="0.1" name="corrected_value" value="{{ d.stat_value if d.stat_value is not none else '' }}">
+      </div>
+      {% if d.identity_match_type != "exact" and d.identity_match_type != "alias" %}
+      <div class="stat-row">
+        <label>Player</label>
+        <select name="player_id_override">
+          <option value="">-- select a player --</option>
+          <option value="CREATE_NEW">Create new player: "{{ d.extracted_player_name }}"</option>
+          {% for p in all_players %}
+            <option value="{{ p['player_id'] }}">{{ p["display_name"] }} ({{ p["position"] }})</option>
+          {% endfor %}
+        </select>
+        <input type="hidden" name="new_player_name" value="{{ d.extracted_player_name }}">
+      </div>
+      {% endif %}
+      <button type="submit">Accept</button>
+    </form>
+    <form method="post" action="/review/{{ it['review_id'] }}/resolve" class="inline">
+      <input type="hidden" name="action" value="rejected">
+      <button type="submit" class="danger">Reject</button>
+    </form>
+
+  {% else %}
+    <p><strong>{{ it["reason"]|replace("_", " ")|title }}</strong> - {{ it["entity_type"] }}
+      {% if it["source_name"] %}<span class="muted">- {{ it["source_name"] }}</span>{% endif %}
+      {% if it["confidence"] %}<span class="badge partial">{{ it["confidence"] }} confidence</span>{% endif %}
+    </p>
+    <p class="muted">{{ it["details_json"] }}</p>
+    <form method="post" action="/review/{{ it['review_id'] }}/resolve" class="inline">
+      <input type="hidden" name="action" value="approved">
+      <button type="submit">Approve</button>
+    </form>
+    <form method="post" action="/review/{{ it['review_id'] }}/resolve" class="inline">
+      <input type="hidden" name="action" value="rejected">
+      <button type="submit" class="danger">Reject</button>
+    </form>
+  {% endif %}
+</div>
+{% endfor %}
+
+{% if total_pages > 1 %}
+<div class="card">
+  <p class="muted">Page {{ page }} of {{ total_pages }} ({{ total }} matching items)</p>
+  {% if page > 1 %}
+    <a href="?page={{ page - 1 }}&entity_type={{ filter_entity_type }}&reason={{ filter_reason }}&source_name={{ filter_source_name }}">&larr; Previous</a>
+  {% endif %}
+  {% if page < total_pages %}
+    <a href="?page={{ page + 1 }}&entity_type={{ filter_entity_type }}&reason={{ filter_reason }}&source_name={{ filter_source_name }}">Next &rarr;</a>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}

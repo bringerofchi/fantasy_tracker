@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Enter Projections (PPR)</h2>
+  <form method="get" style="margin-bottom:16px;">
+    <div class="stat-row">
+      <label>Player</label>
+      <select name="player_id" onchange="this.form.submit()">
+        <option value="">— select —</option>
+        {% for p in players %}
+          <option value="{{ p['player_id'] }}" {% if selected_player_id == p['player_id'] %}selected{% endif %}>
+            {{ p["display_name"] }} ({{ p["position"] }})
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Week</label>
+      <select name="week_number" onchange="this.form.submit()">
+        {% for w in range(1, 19) %}
+          <option value="{{ w }}" {% if selected_week == w %}selected{% endif %}>Week {{ w }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </form>
+
+  {% if selected_player_id and stat_defs %}
+  <form method="post">
+    <input type="hidden" name="player_id" value="{{ selected_player_id }}">
+    <input type="hidden" name="week_number" value="{{ selected_week }}">
+    {% for sd in stat_defs %}
+    <div class="stat-row">
+      <label>{{ sd["display_label"] }}</label>
+      <input type="hidden" name="stat_name" value="{{ sd['stat_name'] }}">
+      <input type="number" step="0.1" name="stat_value" value="{{ existing_map.get(sd['stat_name'], '') }}" placeholder="—">
+    </div>
+    {% endfor %}
+    <button type="submit">Save Projections</button>
+  </form>
+  {% if fp_result %}
+  <p style="margin-top:12px;">Projected fantasy points (PPR): <strong>{{ fp_result.total_points }}</strong>
+    {% if not fp_result.is_complete %}<span class="badge partial">incomplete — missing {{ fp_result.missing|join(", ") }}</span>{% endif %}
+  </p>
+  {% endif %}
+  <p class="muted">Existing values are pre-filled. Saving creates a new version and preserves prior history rather than overwriting it.</p>
+  {% elif selected_player_id %}
+  <p class="muted">No stat fields defined for this position.</p>
+  {% else %}
+  <p class="muted">Select a player and week to enter projections.</p>
+  {% endif %}
+</div>
+{% endblock %}

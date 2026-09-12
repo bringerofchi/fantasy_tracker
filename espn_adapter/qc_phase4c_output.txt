@@ -1,0 +1,32 @@
+(writing a full copy of this output to C:\Projects\CFB EDGE\espn_adapter\qc_phase4c_output.txt)
+
+[PASS] QC1: live fetch returns data (2026 wk1, 8 players) — 24 observations, all 4 positions represented
+[PASS] QC2: projection schema correctness — 8 projections, all fields valid
+[PASS] QC3: rankings have correct ranking_type — every player has exactly one OVERALL + one own-position ranking, both positive
+[PASS] QC4a: no fabricated ACTUAL for unplayed 2026 week — 0 ACTUAL observations, as expected
+[PASS] QC4b: 2025 positional ranking correctly absent (source limitation, not a bug) — overall=8/8 present, positional=0/0 present (expected 0)
+[PASS] QC5: adapter output is idempotent (re-fetch precondition) — 3 observations, identical across two independent calls, no internal dupes
+[NOT TESTABLE] QC5b: duplicate-on-INSERT is handled correctly at the DB/ingestion layer — requires the tracker's storage/ingestion code, which this session has not been given
+[PASS] QC6a: every observation attributed source='espn' — 48/48 observations correctly attributed
+[NOT TESTABLE] QC6b: no cross-contamination alongside OTHER source adapters — requires the other source adapters + shared ingestion pipeline, not available to this session
+[PASS] QC7: FLEX is never fabricated by the ESPN adapter (static scan) — no RankingType.FLEX usage found in espn_core.py / espn_adapter.py / local_file_adapter.py
+
+======================================================================
+PHASE 4C QC SUMMARY
+======================================================================
+  [PASS         ] QC1: live fetch returns data (2026 wk1, 8 players)
+  [PASS         ] QC2: projection schema correctness
+  [PASS         ] QC3: rankings have correct ranking_type
+  [PASS         ] QC4a: no fabricated ACTUAL for unplayed 2026 week
+  [PASS         ] QC4b: 2025 positional ranking correctly absent (source limitation, not a bug)
+  [PASS         ] QC5: adapter output is idempotent (re-fetch precondition)
+  [NOT TESTABLE ] QC5b: duplicate-on-INSERT is handled correctly at the DB/ingestion layer
+  [PASS         ] QC6a: every observation attributed source='espn'
+  [NOT TESTABLE ] QC6b: no cross-contamination alongside OTHER source adapters
+  [PASS         ] QC7: FLEX is never fabricated by the ESPN adapter (static scan)
+
+8 PASS, 0 FAIL, 2 NOT TESTABLE
+
+RESULT: QC PASSED (NOT TESTABLE items require the tracker's DB/ingestion code and other adapters to close out).
+
+Press Enter to close this window...

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Enter Ranking</h2>
+  <form method="post">
+    <div class="stat-row">
+      <label>Player</label>
+      <select name="player_id" required>
+        <option value="">— select —</option>
+        {% for p in players %}
+          <option value="{{ p['player_id'] }}">{{ p["display_name"] }} ({{ p["position"] }})</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Week</label>
+      <select name="week_number" required>
+        {% for w in range(1, 19) %}<option value="{{ w }}">Week {{ w }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Source</label>
+      <select name="source_name" required>
+        <option value="Yahoo">Yahoo</option>
+        <option value="ESPN">ESPN</option>
+        <option value="The Athletic">The Athletic</option>
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Ranking type</label>
+      <select name="ranking_type" required>
+        <option value="overall">Overall</option>
+        <option value="QB">QB</option>
+        <option value="RB">RB</option>
+        <option value="WR">WR</option>
+        <option value="TE">TE</option>
+        <option value="FLEX">FLEX</option>
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Rank value</label>
+      <input type="number" step="1" name="ranking_value" required>
+    </div>
+    <button type="submit">Save Ranking</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Recent Rankings</h2>
+  <table>
+    <tr><th>Player</th><th>Week</th><th>Source</th><th>Type</th><th>Rank</th></tr>
+    {% for r in recent %}
+    <tr>
+      <td>{{ r["display_name"] }}</td>
+      <td>{{ r["week_number"] }}</td>
+      <td>{{ r["source_name"] }}</td>
+      <td>{{ r["ranking_type"] }}</td>
+      <td>{{ r["ranking_value"]|int }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Upload a Screenshot</h2>
+  <p class="muted">
+    Each field the AI extracts gets its own confidence score. High-confidence
+    fields on a clearly-identified player are accepted automatically; anything
+    uncertain — an unclear number, an unresolved player name, an implausible
+    value, a week mismatch — goes to the Review Queue instead. Nothing becomes
+    a trusted statistic without either high confidence + a resolved identity,
+    or your explicit approval.
+  </p>
+  <form method="post" enctype="multipart/form-data">
+    <div class="stat-row">
+      <label>Screenshot</label>
+      <input type="file" name="screenshot" accept="image/png,image/jpeg" required>
+    </div>
+    <div class="stat-row">
+      <label>This screenshot shows</label>
+      <select name="data_type" required>
+        <option value="actual">Actual stats (this week's results)</option>
+        <option value="projection">Projections</option>
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Source</label>
+      <select name="source_name" required>
+        <option value="NFL">NFL (actual stats)</option>
+        <option value="Yahoo">Yahoo</option>
+        <option value="ESPN">ESPN</option>
+        <option value="The Athletic">The Athletic</option>
+        <option value="User">User</option>
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Week</label>
+      <select name="week_number" required>
+        {% for w in range(1, 19) %}<option value="{{ w }}">Week {{ w }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Position (if known)</label>
+      <select name="position_hint">
+        <option value="">— let the AI detect it —</option>
+        <option value="QB">QB</option>
+        <option value="RB">RB</option>
+        <option value="WR">WR</option>
+        <option value="TE">TE</option>
+      </select>
+    </div>
+    <button type="submit">Upload &amp; Extract</button>
+  </form>
+  <p class="muted" style="margin-top:14px;">
+    Requires an ANTHROPIC_API_KEY environment variable to be set for this app to run
+    live extraction. If it isn't set, the upload is still saved and flagged for review.
+  </p>
+</div>
+{% endblock %}

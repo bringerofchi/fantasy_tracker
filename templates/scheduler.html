@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Scheduled Collection Jobs</h2>
+  <p class="muted">
+    Each run goes through the exact same ingestion pipeline as a manual
+    screenshot upload — identity resolution, validation, confidence routing,
+    and versioning are all shared, not reimplemented here.
+  </p>
+  <form method="post" action="/scheduler/run_due" class="inline">
+    <button type="submit">Run all due jobs now</button>
+  </form>
+  <form method="post" action="/scheduler/recover_stale" class="inline">
+    <button type="submit">Recover stale runs ({{ stale|length }})</button>
+  </form>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Jobs</h3>
+  {% if not jobs %}
+    <p class="muted">No scheduled jobs yet.</p>
+  {% endif %}
+  <table>
+    <tr><th>Source</th><th>Status</th><th>Next Run</th><th>Failures</th><th>Attention</th><th></th></tr>
+    {% for j in jobs %}
+    <tr>
+      <td>{{ j.source_name }} (Week {{ j.week_number }})</td>
+      <td>
+        {% if j.currently_running %}<span class="badge partial">running</span>
+        {% elif j.enabled %}<span class="badge complete">enabled</span>
+        {% else %}<span class="badge none">disabled</span>{% endif %}
+        {% if j.last_run_status %}<span class="muted"> last: {{ j.last_run_status }}</span>{% endif %}
+      </td>
+      <td class="muted">{{ j.next_run_at or "—" }}</td>
+      <td>{{ j.consecutive_failures }}</td>
+      <td>{% if j.needs_attention %}<span class="badge partial">needs attention</span>{% endif %}
+        {% if j.last_error %}<div class="muted">{{ j.last_error }}</div>{% endif %}
+      </td>
+      <td>
+        <form method="post" action="/scheduler/{{ j.job_id }}/run_now" class="inline">
+          <button type="submit">Run now</button>
+        </form>
+        <form method="post" action="/scheduler/{{ j.job_id }}/toggle" class="inline">
+          <button type="submit">{{ "Disable" if j.enabled else "Enable" }}</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Add a Job</h3>
+  <form method="post" action="/scheduler/create">
+    <div class="stat-row">
+      <label>Source</label>
+      <select name="source_name" required>
+        <option value="NFL">NFL</option>
+        <option value="Yahoo">Yahoo</option>
+        <option value="ESPN">ESPN</option>
+        <option value="The Athletic">The Athletic</option>
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Adapter</label>
+      <select name="adapter_type" required>
+        {% for a in adapter_types %}<option value="{{ a }}">{{ a }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Source file path</label>
+      <input type="text" name="file_path" placeholder="/path/to/weekly_export.json" required>
+    </div>
+    <div class="stat-row">
+      <label>Week</label>
+      <select name="week_number" required>
+        {% for w in range(1, 19) %}<option value="{{ w }}">Week {{ w }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="stat-row">
+      <label>Interval (minutes)</label>
+      <input type="number" name="interval_minutes" value="60" required>
+    </div>
+    <div class="stat-row">
+      <label>Max retries</label>
+      <input type="number" name="max_retries" value="3" required>
+    </div>
+    <div class="stat-row">
+      <label>Retry backoff (minutes)</label>
+      <input type="number" name="retry_backoff_minutes" value="15" required>
+    </div>
+    <button type="submit">Add Job</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">{{ player["display_name"] }} <span class="muted">({{ player["position"] }})</span></h2>
+  <p class="muted">Season {{ season["year"] }} · PPR scoring · Projected/Actual FP are always derived live from the currently trusted raw statistics. Weekly projections are shown per source and never merged.</p>
+</div>
+
+{% if not comparison.sources %}
+<div class="card">
+  <p class="muted">No weekly projections for this player yet from any source.</p>
+</div>
+{% else %}
+{% for source_name in comparison.sources %}
+{% set data = comparison.by_source[source_name] %}
+<div class="card">
+  <h3 style="margin-top:0">{{ source_name }} &mdash; Projection Accuracy Summary</h3>
+  {% if data.accuracy.weeks == 0 %}
+    <p class="muted">Not enough data yet — need at least one week with both a projection and an actual.</p>
+  {% else %}
+    <p>
+      Weeks: <strong>{{ data.accuracy.weeks }}</strong> ·
+      Avg Projection: <strong>{{ data.accuracy.avg_projected }}</strong> ·
+      Avg Actual: <strong>{{ data.accuracy.avg_actual }}</strong> ·
+      Avg Difference: <strong>{{ "+%.2f"|format(data.accuracy.avg_difference) if data.accuracy.avg_difference >= 0 else data.accuracy.avg_difference }}</strong> ·
+      Avg Absolute Error: <strong>{{ data.accuracy.avg_absolute_error }}</strong> ·
+      Over Projection: <strong>{{ data.accuracy.weeks_over }}/{{ data.accuracy.weeks }}</strong>
+    </p>
+  {% endif %}
+
+  <h4>Weekly View</h4>
+  {% if not data.weekly %}
+    <p class="muted">No projections or actuals recorded yet for this source.</p>
+  {% else %}
+  <table>
+    <tr><th>Week</th><th>Projected FP</th><th>Actual FP</th><th>Difference</th><th>Rankings</th></tr>
+    {% for w in data.weekly %}
+    <tr>
+      <td>{{ w.week_number }}</td>
+      <td>
+        {% if w.projected_fp is not none %}
+          {{ w.projected_fp }} {% if not w.projection_complete %}<span class="badge partial">incomplete</span>{% endif %}
+        {% else %}<span class="muted">—</span>{% endif %}
+      </td>
+      <td>
+        {% if w.actual_fp is not none %}
+          {{ w.actual_fp }} {% if not w.actual_complete %}<span class="badge partial">incomplete</span>{% endif %}
+        {% else %}<span class="muted">—</span>{% endif %}
+      </td>
+      <td>
+        {% if w.difference is not none %}
+          {{ "+%.2f"|format(w.difference) if w.difference >= 0 else w.difference }}
+        {% else %}<span class="muted">—</span>{% endif %}
+      </td>
+      <td class="muted">
+        {% for r in w.rankings %}{{ r.source_name }} {{ r.ranking_type }}: {{ r.ranking_value|int }}{% if not loop.last %}, {% endif %}{% endfor %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+
+  <h4>Week-over-Week Trend</h4>
+  {% if not data.trend %}
+    <p class="muted">No data yet.</p>
+  {% else %}
+  <table>
+    <tr><th>Week</th><th>Projected FP</th><th>Actual FP</th><th>Difference</th></tr>
+    {% for t in data.trend %}
+    <tr>
+      <td>{{ t.week_number }}</td>
+      <td>{{ t.projected_fp if t.projected_fp is not none else "—" }}</td>
+      <td>{{ t.actual_fp if t.actual_fp is not none else "—" }}</td>
+      <td>{{ t.difference if t.difference is not none else "—" }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

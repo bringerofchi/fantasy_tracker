@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Season {{ season["year"] }}</h2>
+  <p class="muted">{{ total_players }} players tracked · {{ pending_review }} item(s) pending review
+    {% if pending_review > 0 %}— <a href="/review">go to Review Queue</a>{% endif %}
+  </p>
+  <form method="get" style="margin-bottom:14px;">
+    <label class="muted">Week:</label>
+    <select name="week" onchange="this.form.submit()">
+      {% for w in weeks %}
+        <option value="{{ w['week_number'] }}" {% if selected_week|string == w['week_number']|string %}selected{% endif %}>
+          Week {{ w['week_number'] }} ({{ w['status'] }})
+        </option>
+      {% endfor %}
+    </select>
+  </form>
+
+  <h3>Data completeness — Week {{ selected_week }}</h3>
+  <table>
+    <tr><th>Source</th><th>Players with data</th></tr>
+    {% for name, count in completeness.items() %}
+    <tr>
+      <td>{{ name }}</td>
+      <td>
+        {% if count > 0 %}
+          <span class="badge complete">{{ count }} players</span>
+        {% else %}
+          <span class="badge none">no data yet</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% if fantasy_summary %}
+<div class="card">
+  <h3 style="margin-top:0">Fantasy Summary — Week {{ selected_week }}</h3>
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Players with projections</td><td>{{ fantasy_summary.players_with_projections }}</td></tr>
+    <tr><td>Players with actuals</td><td>{{ fantasy_summary.players_with_actuals }}</td></tr>
+    <tr><td>Players with both (comparable)</td><td>{{ fantasy_summary.players_with_both }}</td></tr>
+  </table>
+  <h4>Data Quality</h4>
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Players with incomplete actual stat lines</td><td>{{ fantasy_summary.players_with_incomplete_actuals }}</td></tr>
+    <tr><td>Conflicts pending review</td><td>{{ fantasy_summary.conflicts }}</td></tr>
+    <tr><td>Ambiguous identity matches pending review</td><td>{{ fantasy_summary.ambiguous_identity }}</td></tr>
+    <tr><td>Total unresolved review items</td><td>{{ fantasy_summary.unresolved_review_items }}</td></tr>
+  </table>
+</div>
+{% endif %}
+
+<div class="card">
+  <h3 style="margin-top:0">Season-Long Projections</h3>
+  {% if season["projections_locked_at"] %}
+    <p>Locked on <strong>{{ season["projections_locked_at"] }}</strong> — season projections are now fixed and will be compared against actual full-season stats at season's end.</p>
+  {% elif season["start_date"] %}
+    <p class="muted">Season starts <strong>{{ season["start_date"] }}</strong>. Season-long projections will lock automatically on that date.</p>
+  {% else %}
+    <p class="muted">No season start date set yet — season-long projections stay editable until you set one.</p>
+    <form method="post" action="/settings/season_start">
+      <div class="stat-row">
+        <label>Season start date</label>
+        <input type="date" name="start_date" required>
+      </div>
+      <button type="submit">Set start date</button>
+    </form>
+  {% endif %}
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Exports</h3>
+  <p class="muted">Download raw tables as CSV. Raw statistics/projections are never replaced by derived values.</p>
+  <a href="/export/players">players.csv</a> ·
+  <a href="/export/projections">projections.csv</a> ·
+  <a href="/export/statistics">statistics.csv</a> ·
+  <a href="/export/rankings">rankings.csv</a> ·
+  <a href="/export/corrections">corrections.csv</a> ·
+  <a href="/export/fantasy_points">fantasy_points.csv (derived)</a>
+</div>
+{% endblock %}

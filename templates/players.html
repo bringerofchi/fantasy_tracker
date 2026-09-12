@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-top:0">Add Player</h2>
+  <form method="post">
+    <div class="stat-row">
+      <label>Name</label>
+      <input type="text" name="display_name" required placeholder="e.g. Justin Jefferson">
+    </div>
+    <div class="stat-row">
+      <label>Position</label>
+      <select name="position" required>
+        <option value="QB">QB</option>
+        <option value="RB">RB</option>
+        <option value="WR">WR</option>
+        <option value="TE">TE</option>
+      </select>
+    </div>
+    <button type="submit">Add Player</button>
+  </form>
+  <p class="muted">If a name matches multiple existing players, it's sent to the Review Queue rather than guessing (identity resolution, sec. 8).</p>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">Roster ({{ players|length }})</h2>
+  <table>
+    <tr><th>Name</th><th>Position</th><th>Added</th><th></th></tr>
+    {% for p in players %}
+    <tr>
+      <td>{{ p["display_name"] }}</td>
+      <td>{{ p["position"] }}</td>
+      <td class="muted">{{ p["created_at"] }}</td>
+      <td><a href="/players/{{ p['player_id'] }}">Weekly view →</a> · <a href="/players/{{ p['player_id'] }}/season">Season view →</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}
